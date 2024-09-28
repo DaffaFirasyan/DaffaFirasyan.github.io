@@ -1,10 +1,105 @@
-<html>
-    <head>
-        <title>Raden Daffa Firasyan Adikusumah</title>
-    </head>
-    <body>
-        <h2>Raden Daffa Firasyan Adikusumah</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Raden Daffa Firasyan Adikusumah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px white;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        h2 {
+            margin: 1;
+        }
+
+        .subtitle {
+            margin-top: 5px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .datetime {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 1rem;
+            color:rgb(255, 255, 255);
+        }
+
+        .social-icons a {
+            margin: 0 50px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 50px;
+        }
+
+        .social-icons a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="foto portrait.jpg" alt="Profile Image" class="profile-img" width="100" height="">
+        <h1>Raden Daffa Firasyan Adikusumah</h1>
         <h2>1202223066</h2>
         <h2>S1 Sistem Informasi</h2>
-    </body>
+
+    <p class="datetime" id="datetime"></p>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/rdndaffaa"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/DaffaFirasyan"><i class="fab fa-github"></i></a>
+            <a href="www.linkedin.com/in/daffa-firasyan"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+            const date = now.toLocaleDateString('id-ID', options);
+            const time = now.toLocaleTimeString('id-ID');
+            document.getElementById('datetime').innerHTML = `${date} | ${time}`;
+        }
+
+        setInterval(updateTime, 1000);
+
+        updateTime();
+    </script>
+
+</body>
 </html>
